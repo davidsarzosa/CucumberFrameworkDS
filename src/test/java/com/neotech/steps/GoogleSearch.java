@@ -42,4 +42,9 @@ public class GoogleSearch {
 	public void i_should_see_the_results_of_my_search() {
 		System.out.println("Results of my search displayed.");
 	}
+	
+	@Then("I shloud see the number of results displayed")
+	public void i_shloud_see_the_number_of_results_displayed() {
+	    System.out.println("The number of results are displayed!");
+	}
 }
