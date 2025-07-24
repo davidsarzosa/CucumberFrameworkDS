@@ -17,11 +17,12 @@ public class DashboardPageElements {
 	@FindBy(linkText = "Add Employee")
 	public WebElement addEmployeeLink;
 	
+	@FindBy(id = "menu_pim_viewEmployeeList")
+	public WebElement employeeListLink;
+	
 	@FindBy(id = "toast-message")
 	public WebElement invalidCredentials;
-	
-	
-	
+
 	public DashboardPageElements()
 	{
 		PageFactory.initElements(BaseClass.driver, this);

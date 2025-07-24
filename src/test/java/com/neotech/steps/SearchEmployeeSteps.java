@@ -10,6 +10,7 @@ public class SearchEmployeeSteps extends CommonMethods {
 
 	@Given("The user is logged in with valid credentials")
 	public void the_user_is_logged_in_with_valid_credentials() {
+		loginPage.adminLogin();
 	   
 	}
 

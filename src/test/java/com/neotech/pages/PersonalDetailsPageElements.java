@@ -16,9 +16,7 @@ public class PersonalDetailsPageElements {
 	public WebElement employeeId;
 	
 	@FindBy(id = "pim.navbar.employeeName")
-	public WebElement employeeFullname;
-	
-	
+	public WebElement employeeFullName;
 	
 	
 	

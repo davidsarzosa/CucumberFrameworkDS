@@ -24,8 +24,8 @@ public class LoginPageElements extends CommonMethods {
 	public WebElement passwordError;
 	
 	
-	@FindBy(xpath="//div[@class='toast-message']")
-	public WebElement invalidCredentials;
+	@FindBy(css="div.toast-message")
+	public WebElement invalidPassword;
 	
 	
 	
@@ -46,3 +46,4 @@ public class LoginPageElements extends CommonMethods {
 	}
 
 }
+

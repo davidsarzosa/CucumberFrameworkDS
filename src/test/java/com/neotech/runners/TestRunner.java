@@ -15,12 +15,12 @@ import io.cucumber.junit.CucumberOptions;
 		glue = "com.neotech.steps", // path to the step definitions
 		
 		// we may use dry run to check for syntax errors 
-		dryRun = true, // if true, it will not run the tests, just check for syntax errors 
+		dryRun = false, // if true, it will not run the tests, just check for syntax errors 
 		
 		// we may set monochrome to true for better readability in the console 
 		monochrome = true, // if true, it will not print the console output in color 
 		
-		tags = "@task" // we can specify tags to run specific tests 
+		tags = "@usingDataTable" // we can specify tags to run specific tests 
 		
 		)
 

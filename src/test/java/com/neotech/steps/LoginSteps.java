@@ -66,7 +66,7 @@ public class LoginSteps extends CommonMethods {
 	@Then("I should see Invalid Credentials message")
 	public void i_should_see_invalid_credentials_message() {
 	   String expected = "Invalid Credentials";
-	   String actual = login.invalidCredentials.getText();
+	   String actual = login.invalidPassword.getText();
 	   
 	   if(expected.equals(actual)) {
 		   System.out.println("Test successful. User is on the dashboard");

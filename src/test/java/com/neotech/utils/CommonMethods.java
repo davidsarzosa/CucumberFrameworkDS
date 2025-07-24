@@ -257,6 +257,14 @@ public class CommonMethods extends PageInitializer {
 	 * @param locator
 	 * @return
 	 */
+	
+	
+	/**
+	 * This method waits until the provided element is clickable in page.
+	 * 
+	 * @param locator
+	 * @return
+	 */
 	public static WebElement waitForClickability(WebElement element) {
 		return getWaitObject().until(ExpectedConditions.elementToBeClickable(element));
 	}
