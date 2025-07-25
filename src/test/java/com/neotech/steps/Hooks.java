@@ -14,6 +14,6 @@ public class Hooks extends CommonMethods {
 	
 	@After 
 	public void end() {
-		
+		tearDown();
 	}
 }

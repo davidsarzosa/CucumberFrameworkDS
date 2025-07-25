@@ -18,6 +18,20 @@ public class PersonalDetailsPageElements {
 	@FindBy(id = "pim.navbar.employeeName")
 	public WebElement employeeFullName;
 	
+	@FindBy(id = "licenseNo")
+	public WebElement driverLicense;
+	
+	@FindBy(xpath = "//label[text()='Smoker']")
+	public WebElement smokerCheckbox;
+	
+	@FindBy(id = "emp_gender_inputfileddiv")
+	public WebElement dropdownGender;
+	
+	@FindBy(xpath = "//div[@id=\"emp_gender_inputfileddiv\"]//input")
+	public WebElement genderInput;
+	
+	
+	
 	
 	
 	public PersonalDetailsPageElements()

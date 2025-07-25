@@ -251,13 +251,6 @@ public class CommonMethods extends PageInitializer {
 	}
 	
 	
-	/**
-	 * This method waits until the provided element is clickable in page.
-	 * 
-	 * @param locator
-	 * @return
-	 */
-	
 	
 	/**
 	 * This method waits until the provided element is clickable in page.
@@ -379,6 +372,21 @@ public class CommonMethods extends PageInitializer {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
 
 		return sdf.format(date);
+	}
+	
+	/**
+	 * This method clicks on the element in the list that matches the value
+	 * 
+	 * @param list
+	 * @param value
+	 */
+	public static void clickOnElement(List<WebElement> list, String value) {
+		for (WebElement option : list) {
+			if (option.getText().equalsIgnoreCase(value)) {
+				option.click();
+				break;
+			}
+		}
 	}
 
 }

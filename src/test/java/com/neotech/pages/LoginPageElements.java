@@ -17,7 +17,7 @@ public class LoginPageElements extends CommonMethods {
 	public WebElement password;
 	
 	
-	@FindBy(xpath="//button")
+	@FindBy(xpath="//button[@type='submit']")
 	public WebElement loginBtn;
 	
 	@FindBy(id="txtPassword-error")
