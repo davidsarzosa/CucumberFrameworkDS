@@ -245,13 +245,10 @@ public class CommonMethods extends PageInitializer {
 	 * @param element
 	 * @return
 	 */
-	public static WebElement waitForVisibility(WebElement element)
-	{
+	public static WebElement waitForVisibility(WebElement element) {
 		return getWaitObject().until(ExpectedConditions.visibilityOf(element));
 	}
-	
-	
-	
+
 	/**
 	 * This method waits until the provided element is clickable in page.
 	 * 
@@ -339,16 +336,16 @@ public class CommonMethods extends PageInitializer {
 	}
 
 	/**
-	 * This method will take a screenshot saves it in the screenshots folder with the given fileName. 
+	 * This method will take a screenshot saves it in the screenshots folder with
+	 * the given fileName.
 	 * 
 	 * @param fileName
 	 */
-	public static String takeScreenshot(String fileName)
-	{
+	public static byte[] takeScreenshot(String fileName) {
 		TakesScreenshot ts = (TakesScreenshot) driver;
-		
+
+		// Saving the screenshot in a file IS NOT NEEDED ANYMORE!!!
 		File source = ts.getScreenshotAs(OutputType.FILE);
-		
 		String destination = Constants.SCREENSHOT_FILEPATH + fileName + getTimeStamp() + ".png";
 
 		try {
@@ -357,9 +354,10 @@ public class CommonMethods extends PageInitializer {
 			e.printStackTrace();
 		}
 
-		return destination;
+		byte[] image = ts.getScreenshotAs(OutputType.BYTES);
+		return image;
 	}
-	
+
 	/**
 	 * This method returns the current timestamp in the format of
 	 * yyyy-MM-dd_HH-mm-ss
@@ -373,7 +371,7 @@ public class CommonMethods extends PageInitializer {
 
 		return sdf.format(date);
 	}
-	
+
 	/**
 	 * This method clicks on the element in the list that matches the value
 	 * 

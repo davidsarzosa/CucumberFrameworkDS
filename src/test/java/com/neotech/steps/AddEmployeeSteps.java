@@ -6,6 +6,7 @@ import java.util.Map;
 import org.junit.Assert;
 
 import com.neotech.utils.CommonMethods;
+import com.neotech.utils.ExcelUtility;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
@@ -157,10 +158,51 @@ public class AddEmployeeSteps extends CommonMethods {
 			wait(1);
 
 			click(dashboardPage.addEmployeeLink);
-
-			// click on add employee again
 		}
+	}
+	// click on add employee again
 
+	@When("user enters employee details from Excel file and saves it")
+	public void user_enters_employee_details_from_excel_file_and_saves_it() {
+		String path = System.getProperty("user.dir") + "/src/test/resources/testdata/Excel - EmployeeWithLocation.xlsx";
+
+		List<Map<String, String>> employeeList = ExcelUtility.excelIntoListOfMaps(path, "Employee");
+
+		// loop through the list of employees
+		for (Map<String, String> employee : employeeList) {
+			String fName = employee.get("FirstName");
+			String lName = employee.get("LastName");
+			String location = employee.get("Location");
+			String username = employee.get("Username");
+			String password = employee.get("Password");
+
+			// enter the employee details
+			sendText(addEmployeePage.firstName, fName);
+			sendText(addEmployeePage.lastName, lName);
+			selectDropdown(addEmployeePage.location, location);
+			wait(2);
+			click(addEmployeePage.loginDetailsToggle);
+			sendText(addEmployeePage.username, username);
+			sendText(addEmployeePage.password, password);
+			sendText(addEmployeePage.confirmPassword, password);
+
+			wait(2);
+			click(addEmployeePage.saveBtn);
+
+			waitForVisibility(personalDetailsPage.employeeFullName);
+
+			// assert the employee name
+			String expectedName = fName + " " + lName;
+			String actualName = personalDetailsPage.employeeFullName.getText();
+
+			Assert.assertEquals("The employee name does NOT match!!!", expectedName, actualName);
+
+			// at this point, we have added the employee, so we can click on add employee
+			// again
+			wait(1);
+			click(dashboardPage.addEmployeeLink);
+			waitForVisibility(addEmployeePage.firstName);
+		}
 	}
 
 }

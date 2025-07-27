@@ -4,6 +4,7 @@ import com.neotech.utils.CommonMethods;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 
 public class Hooks extends CommonMethods {
 
@@ -11,9 +12,18 @@ public class Hooks extends CommonMethods {
 	public void start() {
 		setUp();
 	}
-	
-	@After 
-	public void end() {
+
+	@After
+	public void end(Scenario scenario) {
+		byte[] screenshot;
+
+		if (scenario.isFailed()) {
+			screenshot = takeScreenshot("failed/" + scenario.getName());
+		} else {
+			screenshot = takeScreenshot("passed/" + scenario.getName());
+		}
+
+		scenario.attach(screenshot, "image/png", scenario.getName());
 		tearDown();
 	}
 }

@@ -56,4 +56,8 @@ Feature: Add Employee Feature
 	 		|Jane		|H.			|Doe		|
 	 		|Jack		|B.			|Doe		|
 	 		
+	 @excelScenario
+	 Scenario: Adding multiple employees with Excel file
+	 When user enters employee details from Excel file and saves it 
+	 
     

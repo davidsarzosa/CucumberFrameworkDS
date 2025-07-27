@@ -1,4 +1,4 @@
-package com.neotech.pages;
+package com.neotech.steps;
 
 import com.neotech.utils.CommonMethods;
 
@@ -19,17 +19,19 @@ public class PersonalDetailsSteps extends CommonMethods {
 			click(personalDetailsPage.smokerCheckbox);
 		}
 
-		// This is for gender
+		// THIS IS FOR GENDER
 		click(personalDetailsPage.dropdownGender);
-
 		// Now we need to input the correct gender, this will work because is an input
 		// but this will depends on the case
+		sendText(personalDetailsPage.genderInput, gender);
+
+		// Select Nationality
 
 	}
 
 	@Then("I click on Personal Details Save")
 	public void i_click_on_personal_details_save() {
-
+		jsClick(personalDetailsPage.personalDetailsSaveBtn);
 	}
 
 }
