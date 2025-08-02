@@ -8,42 +8,34 @@ import com.neotech.utils.CommonMethods;
 import com.neotech.utils.ConfigsReader;
 
 public class LoginPageElements extends CommonMethods {
-	
-	@FindBy(id="txtUsername")
+
+	@FindBy(id = "txtUsername")
 	public WebElement username;
-	
-	
-	@FindBy(id="txtPassword")
+
+	@FindBy(id = "txtPassword")
 	public WebElement password;
-	
-	
-	@FindBy(xpath="//button[@type='submit']")
+
+	@FindBy(xpath = "//button[@type='submit']")
 	public WebElement loginBtn;
-	
-	@FindBy(id="txtPassword-error")
+
+	@FindBy(id = "txtPassword-error")
 	public WebElement passwordError;
-	
-	
-	@FindBy(css="div.toast-message")
+
+	@FindBy(css = "div.toast-message")
 	public WebElement invalidPassword;
-	
-	
-	
-	
-	public LoginPageElements()
-	{
+
+	@FindBy(css = "//li[@class='level1 my_info active current']")
+	public WebElement myInfoBtn;
+
+	public LoginPageElements() {
 		PageFactory.initElements(driver, this);
 	}
-	
-	
-	
-	public void adminLogin()
-	{
+
+	public void adminLogin() {
 		sendText(username, ConfigsReader.getProperty("username"));
 		sendText(password, ConfigsReader.getProperty("password"));
-		
+
 		click(loginBtn);
 	}
 
 }
-

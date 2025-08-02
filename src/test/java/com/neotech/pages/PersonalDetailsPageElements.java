@@ -64,6 +64,12 @@ public class PersonalDetailsPageElements {
 	@FindBy(xpath = "//div[@id='personal_details_tab']//button[@type='submit']")
 	public WebElement personalDetailsSaveBtn;
 
+	@FindBy(id = "top-menu-trigger")
+	public WebElement moreBtn;
+
+	@FindBy(xpath = "//a[@class='truncate pim_employees_profile_qualifications']")
+	public WebElement qualificationBtn;
+
 	public PersonalDetailsPageElements() {
 		PageFactory.initElements(BaseClass.driver, this);
 	}
