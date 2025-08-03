@@ -4,7 +4,6 @@ Feature: Add Employee Feature
 	I want to test the Add Employee functionality
 	
 	
-	Background:
 		Given The user is logged in with valid credentials
 	    And user navigates to AddEmployee page
 	

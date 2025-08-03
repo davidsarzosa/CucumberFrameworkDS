@@ -13,6 +13,12 @@ public class EmployeeListPageElements {
 
 	@FindBy(id = "quick_search_icon")
 	public WebElement searchIcon;
+	
+	@FindBy(xpath="//th[@class='sortable row-employee-id']")
+	public WebElement empListPage;
+	
+	@FindBy(xpath="//table[@id='employeeListTable']//td[3]")
+	public WebElement empName;
 
 	public EmployeeListPageElements() {
 		PageFactory.initElements(BaseClass.driver, this);

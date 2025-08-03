@@ -69,6 +69,11 @@ public class PersonalDetailsPageElements {
 
 	@FindBy(xpath = "//a[@class='truncate pim_employees_profile_qualifications']")
 	public WebElement qualificationBtn;
+	
+	
+	
+	@FindBy(xpath="//h4[contains(text(),'Personal Details')]")
+	public WebElement personalDetailsHeader;
 
 	public PersonalDetailsPageElements() {
 		PageFactory.initElements(BaseClass.driver, this);

@@ -1,22 +1,25 @@
 #Author David 
 
-Feature: Add Qualifications Page
+
 	
-	
-	Scenario: Qualifications Page validation
-	Given The user is logged in with valid credentials
-	And user navigates to MyInfo button
-	Then user navvigates More Dropdown
-	And  user navigate to Qualifications option 
-	Then user click add qualification button 
-	And user click work experience option
-	Then user add requierd Work Experience 
-	And click save button  
-	Then information should be displayed on the Work Experience table
-	
-	
-	
-	
+  Feature: Admin Add employee Qualifications
+  
+  @qualifications
+  Scenario: Admin select any employee and manage qualification entries
+    Given User is logged into the application
+    When User navigates to PIM and clicks on Employee List
+    And User clicks on any employee in the list 
+    Then User should be navigated to the Personal Details page
+    When the admin expands the More dropdown
+    And selects the Qualifications option
+    Then the Qualifications page should be displayed
+
+  # Work Experience
+  When the admin clicks on the + icon
+  And selects Work Experience
+  Then the Work Experience modal should be displayed
+  When the admin fills in valid work experience details and clicks Save
+  Then the new work experience should appear in the Work Experience table
 	
 	
  

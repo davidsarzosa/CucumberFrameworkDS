@@ -36,7 +36,8 @@ public class DashboardPageElements {
 	
 	@FindBy(id = "menu_news_More")
 	public WebElement moreMenu;
-	
+	@FindBy(xpath="//span[contains(text(), 'Employee List')]")
+	public WebElement empListLink;
 	
 	
 	public DashboardPageElements()
