@@ -12,17 +12,18 @@ public class QualificationPageElements {
 
 	@FindBy(xpath = "//div[@class='qulifications-add-button fixed-action-btn floating-add-btn']")
 	public WebElement addQualificationsBtn;
-	
+
 	@FindBy(xpath = "//ul[@id='additem-options-dropdown-qualifications']//a[contains(text(),'Work Experience')]")
 	public WebElement workExperienceBtn;
-	
+
 	@FindBy(xpath = "//h5[@class='modal-title']")
 	public WebElement workExperienceTitle;
-	
+
 	@FindBy(partialLinkText = "Qualifications")
-	public WebElement  qualificationPageText;
-	// 
-	// Add Work Experience Elements -------------------------------------------------------- 
+	public WebElement qualificationPageText;
+	//
+	// Add Work Experience Elements
+	// --------------------------------------------------------
 	//
 	@FindBy(xpath = "//input[@id='employer']")
 	public WebElement Company;
@@ -31,35 +32,40 @@ public class QualificationPageElements {
 	public WebElement jobTitle;
 
 	@FindBy(xpath = "//label[@for='from_date']/following::button[@class='btn date-picker-button'][1]/i")
-	public WebElement openCalendarIcon;
-	
-	@FindBy(xpath = "//div[@class='dropdown bootstrap-select picker__select--month']")
-	public WebElement calendarInputWorkExperieceFROM;
-	
-	@FindBy(xpath = "//div[@class='dropdown bootstrap-select picker__select--month show']//option")
-	public WebElement monthOption; // this potentially needs to be changed to List of WebElements if does not work 
-	
-	@FindBy(xpath = "//div[@class='dropdown bootstrap-select picker__select--year']")
-	public WebElement yearOption; // this potentially needs to be changed to List of WebElements if does not work 
-	
-	@FindBy(xpath = "//div[@class='picker__day picker__day--infocus']")
-	public WebElement dayOption;
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public WebElement openCalendarIconFROM;
 
-	
-	
+	@FindBy(xpath = "//div[@class='dropdown bootstrap-select picker__select--month']")
+	public WebElement calendarMonthSelect;
+
+	@FindBy(xpath = "//div[@class='dropdown bootstrap-select picker__select--month show']//option")
+	public WebElement monthOptionFROM; // this potentially needs to be changed to List of WebElements if does not work
+
+	@FindBy(xpath = "//div[@class='dropdown bootstrap-select picker__select--year']")
+	public WebElement yearOptionFROM; // this potentially needs to be changed to List of WebElements if does not work
+
+	@FindBy(xpath = "//div[@class='picker__day picker__day--infocus']")
+	public WebElement dayOptionCalendarFROM;
+
+	@FindBy(xpath = "//label[@for='from_date']/following::button[@class='btn date-picker-button'][2]/i")
+	public WebElement openCalendarIconTO;
+
+	@FindBy(xpath = "//label[@for='to_date']/following::button[contains(@class, 'date-picker-button')][1]")
+	public WebElement dayOptionCalendarTO;
+
+	@FindBy(id = "comments")
+	public WebElement addWorkExperienceComments;
+
+	@FindBy(xpath = "//label[@class='custom-control-label']")
+	public WebElement creditableLabel;
+
+	@FindBy(id = "modal-save-button")
+	public WebElement addWorkExperienceSaveBtn;
+
+	@FindBy(id = "//div[@class='toast-message']")
+	public WebElement successfullyUpdateMessage;
+
 	public QualificationPageElements() {
 		PageFactory.initElements(BaseClass.driver, this);
 	}
-	
+
 }
