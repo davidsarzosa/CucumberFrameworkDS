@@ -21,10 +21,9 @@ public class QualificationPageElements {
 
 	@FindBy(partialLinkText = "Qualifications")
 	public WebElement qualificationPageText;
-	//
-	// Add Work Experience Elements
-	// --------------------------------------------------------
-	//
+	/////////////////////////////////
+	/// Add Work Experience Elements
+	// ///////////////////////////////
 	@FindBy(xpath = "//input[@id='employer']")
 	public WebElement Company;
 
@@ -49,8 +48,8 @@ public class QualificationPageElements {
 	@FindBy(xpath = "//label[@for='from_date']/following::button[@class='btn date-picker-button'][2]/i")
 	public WebElement openCalendarIconTO;
 
-	@FindBy(xpath = "//label[@for='to_date']/following::button[contains(@class, 'date-picker-button')][1]")
-	public WebElement dayOptionCalendarTO;
+	@FindBy(xpath = "//div[contains(@class,'picker--opened')]//div[@class='picker__day picker__day--infocus' and text()='15']")
+	public WebElement dayOptionCalendarTO15;
 
 	@FindBy(id = "comments")
 	public WebElement addWorkExperienceComments;
@@ -63,6 +62,41 @@ public class QualificationPageElements {
 
 	@FindBy(id = "//div[@class='toast-message']")
 	public WebElement successfullyUpdateMessage;
+	
+	
+/////////////////////////////////
+/// Add Education Elements
+// ///////////////////////////////
+	
+	@FindBy(xpath="//div[@class='filter-option-inner-inner']")
+	public WebElement addEducationLevel;
+	
+	@FindBy(xpath = "//div[@class='dropdown-menu show']//li")
+	public WebElement selectEducationLevel;
+	
+	@FindBy(xpath = "//input[@id='institute']")
+	public WebElement addEducationInstitud;
+	
+	@FindBy(xpath = "//input[@id='major']")
+	public WebElement addMajorSpecialization;
+	
+	@FindBy(xpath = "//input[@id='year']")
+	public WebElement addYearSpecialization;
+	
+	@FindBy(xpath = "//input[@id='score']")
+	public WebElement addScoreSpecialization;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
 
 	public QualificationPageElements() {
 		PageFactory.initElements(BaseClass.driver, this);

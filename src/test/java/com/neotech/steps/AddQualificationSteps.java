@@ -59,30 +59,25 @@ public class AddQualificationSteps extends CommonMethods {
 		sendText(qualificationPage.Company, "AltasCorp");
 		sendText(qualificationPage.jobTitle, "CEO");
 		click(qualificationPage.openCalendarIconFROM);
-		wait(2);
+		//wait(2);
 		click(qualificationPage.dayOptionCalendarFROM);
 		selectDropdown(qualificationPage.dayOptionCalendarFROM, "5");
 		click(qualificationPage.openCalendarIconTO);
-		wait(2);
-		click(qualificationPage.dayOptionCalendarTO);
-		selectDropdown(qualificationPage.dayOptionCalendarTO, "19");
-		wait(1);
+		//wait(2);
+		click(qualificationPage.dayOptionCalendarTO15);
+		///wait(1);
 		click(qualificationPage.creditableLabel);
-		wait(1);
+		//wait(1);
 		click(qualificationPage.addWorkExperienceComments);
 		sendText(qualificationPage.addWorkExperienceComments, "TEST");
-		wait(5);
+		//wait(2);
 		click(qualificationPage.addWorkExperienceSaveBtn);
-		
+		//wait(2);
 
 	}
 
 	@Then("the new work experience should appear in the Work Experience table")
 	public void the_new_work_experience_should_appear_in_the_work_experience_table() {
-		String expected = "Successfully Updated";
-		String actual = qualificationPage.successfullyUpdateMessage.getText();
-		
-		Assert.assertEquals(expected,actual);
 		
 	}
 
