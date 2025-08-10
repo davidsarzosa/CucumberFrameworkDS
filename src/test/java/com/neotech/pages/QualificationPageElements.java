@@ -19,11 +19,13 @@ public class QualificationPageElements {
 	@FindBy(xpath = "//h5[@class='modal-title']")
 	public WebElement workExperienceTitle;
 
-	@FindBy(partialLinkText = "Qualifications")
-	public WebElement qualificationPageText;
+	@FindBy(xpath = "//div[@class='container col s12']")
+	public WebElement qualificationValidation;
+	
+	
 	/////////////////////////////////
 	/// Add Work Experience Elements
-	// ///////////////////////////////
+	/// ///////////////////////////////
 	@FindBy(xpath = "//input[@id='employer']")
 	public WebElement Company;
 
@@ -63,40 +65,101 @@ public class QualificationPageElements {
 	@FindBy(id = "//div[@class='toast-message']")
 	public WebElement successfullyUpdateMessage;
 	
-	
+	@FindBy(xpath = "//th[normalize-space(text())='Company']")
+	public WebElement validationOnWorkTable;
+
 /////////////////////////////////
 /// Add Education Elements
-// ///////////////////////////////
-	
-	@FindBy(xpath="//div[@class='filter-option-inner-inner']")
+/////////////////////////////////
+
+	@FindBy(xpath = "//ul[@id='additem-options-dropdown-qualifications']//a[contains(text(),'Education')]")
+	public WebElement educationBtn;
+
+	@FindBy(xpath = "//div[@class='filter-option-inner-inner']")
 	public WebElement addEducationLevel;
-	
+
 	@FindBy(xpath = "//div[@class='dropdown-menu show']//li")
 	public WebElement selectEducationLevel;
-	
+
 	@FindBy(xpath = "//input[@id='institute']")
-	public WebElement addEducationInstitud;
-	
+	public WebElement addEducationInstitute;
+
 	@FindBy(xpath = "//input[@id='major']")
 	public WebElement addMajorSpecialization;
-	
+
 	@FindBy(xpath = "//input[@id='year']")
 	public WebElement addYearSpecialization;
-	
+
 	@FindBy(xpath = "//input[@id='score']")
 	public WebElement addScoreSpecialization;
 	
-	
-	
-	
-	
-	
-	
-	
-	
+	@FindBy(xpath = "//th[normalize-space(text())='Level']")
+	public WebElement validationOnEducationTable;
 
+/////////////////////////////////
+/// Add Skills Elements
+/////////////////////////////////
+
+	@FindBy(xpath = "//ul[@id='additem-options-dropdown-qualifications']//a[contains(text(),'Skill')]")
+	public WebElement skillsBtn;
+
+	@FindBy(xpath = "//button[@class='btn dropdown-toggle']")
+	public WebElement addSkillButton; // needs to be handle as a dropDown
+
+	@FindBy(xpath = "//input[@id='years_of_exp']")
+	public WebElement addSkillYearsofExperience; // this only accepts positives numbers
+
+	@FindBy(xpath = "//label[@for='comments']")
+	public WebElement addSkillComments;
+
+	@FindBy(id = "modal-save-button")
+	public WebElement addSkillSaveBtn;
 	
+	@FindBy(id = "//th[normalize-space(text())='Skill']")
+	public WebElement validationOnSkillTable;
+
+/////////////////////////////////
+/// Add Languages Elements
+/////////////////////////////////
+
+	@FindBy(xpath = "//ul[@id='additem-options-dropdown-qualifications']//a[contains(text(),'Language')]")
+	public WebElement languageBtn;
+
+	@FindBy(xpath = "(//div[@class='input-group-append']//i[text()='arrow_drop_down'])[1]")
+	public WebElement addLanguageOption; // needs to be handle as a dropDown
+
+	@FindBy(xpath = "(//div[@class='input-group-append-container']//i[text()='arrow_drop_down'])[2]")
+	public WebElement addLanguagePractice; // needs to be handle as a dropDown
+
+	@FindBy(xpath = "(//div[@class='input-group-append-container']//i[text()='arrow_drop_down'])[3]")
+	public WebElement addLanguageFluency; // needs to be handle as a dropDown
+
+	@FindBy(xpath = "//textarea[@id='comments']")
+	public WebElement addLanguageComments;
+
+	@FindBy(id = "modal-save-button")
+	public WebElement saveBtn;
 	
+	@FindBy(id = "//th[normalize-space(text())='Language']")
+	public WebElement validationOnLanguageTable;
+
+/////////////////////////////////
+/// Add Licence Elements
+/////////////////////////////////
+
+		
+	
+	@FindBy(xpath = "//ul[@id='additem-options-dropdown-qualifications']//a[contains(text(),'License')]")
+	public WebElement licenceBtn;
+
+	@FindBy(xpath = "//div[@class='input-group-append']//i[text()='arrow_drop_down']")
+	public WebElement licenceType; // needs to be handle as a dropDown
+
+	@FindBy(xpath = "//input[@id='licenseNo']")
+	public WebElement licenseNumber;
+	
+	@FindBy(id = "//th[normalize-space(text())='License Type']")
+	public WebElement validationOnLicenseTable;
 
 	public QualificationPageElements() {
 		PageFactory.initElements(BaseClass.driver, this);

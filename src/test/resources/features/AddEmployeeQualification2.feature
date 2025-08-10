@@ -1,6 +1,5 @@
-#Author David 
 
-  Feature: Admin Add employee Qualifications
+Feature: Admin Add employee Qualifications
 
   Background:
     Given User is logged into the application
@@ -50,11 +49,3 @@
     Then the Add License modal should be displayed
     When the admin fills in valid license details and clicks Save
     Then the new license should appear in the License table
-	
-	
- 
-
- 
- 
- 
- 
